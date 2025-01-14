@@ -25,14 +25,13 @@ After writing your function, un-comment the call to the function that we've prov
 #Write your function here
 #my solution
 def double_index(my_list,index):
-  if index+1 > len(my_list):
+  if index >= len(my_list):
     return my_list
-  else:
-    my_list[index]*=2
-    return my_list
-
-
+  new_list = my_list[:index]
+  new_list.append(my_list[index]*2)
+  new_list += my_list[index+1:]
+  return new_list
 
 
 #Uncomment the line below when your function is done
-print(double_index([3, 8, -10, 12],))
+print(double_index([3, 8, -10, 12],4))
