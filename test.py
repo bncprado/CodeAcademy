@@ -1,5 +1,10 @@
 list = [4, 8, 15, 16, 23, 42]
 
-del list[1:3]
+print(len(list))
 
-print(list)
+number = 6
+
+if list[7] == False:
+  print("index not valid")
+else:
+  print("ok")
