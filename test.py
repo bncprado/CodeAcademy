@@ -1,10 +1,8 @@
-list = [4, 8, 15, 16, 23, 42]
+my_list = [4, 8, 10, 11, 12]
 
-print(len(list))
+while len(my_list)>0 and int(my_list[0])%2==0:
+  my_list.pop(0)
 
-number = 6
 
-if list[7] == False:
-  print("index not valid")
-else:
-  print("ok")
+
+print(my_list)
