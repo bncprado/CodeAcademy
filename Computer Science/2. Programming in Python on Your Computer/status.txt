@@ -1,0 +1,6 @@
+This lesson at codecademy consists in:
+
+1. Learning some terminal commands like ls, pwd, mkdir, touch, cd, etc, and navigate through directories and files. 
+2. Learning how to install and run python from the terminal, using the commands we learned to navigate through the folders 
+3. Write a simple txt and git from the terminal, using git add, git status, git log, git commit, etc
+4. 
