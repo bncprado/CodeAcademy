@@ -279,5 +279,36 @@ In the body of find_attractions(), find where you append possible_attraction to 
 51. Looks like we've got an interest finder! Let's save these changes to our git repo! First let's add script.py to the git index using git add.
 
 52. Now let's commit the changes with the message "Added interest finder logic"
+"""
+
+#done in my github as well
+
+"""
+53. Now let's get to the main event, connecting people with the attractions that they are interested in.
+
+Define a function called get_attractions_for_traveler() that takes a single parameter, traveler.
+
+54. Let's separate out the traveler's data. Save the following data:
+    - Save traveler[1] into a variable called traveler_destination.
+    - Save traveler[2] into a variable called traveler_interests.
+
+55. Call find_attractions() with the two arguments traveler_destination and traveler_interests. Save the results into traveler_attractions.
+
+56. Create a new string, this is what we'll want to show our traveler when they open our application:
+
+"Hi Dorothy Bortman, we think you'll like these places around Seattle, USA: the SAM, the Pike Place Market."
+
+Start with the beginning, just "Hi " (with a space afterwards).
+
+Save "Hi " into a variable called interests_string.
+
+57. Update interests_string to include the name of the traveler. The traveler's name can be found at traveler[0]. “Add” this to interests_string so that it includes the name of the traveler.
 """  
+
+def get_attractions_for_traveler(traveler):
+  traveler_destination = traveler[1]
+  traveler_interests = traveler[2]
+  find_attractions(traveler_destination, traveler_interests)
+  interests_string = f"Hi {traveler[0]}, we think you'll like these places around"
+  for i in tra
 
