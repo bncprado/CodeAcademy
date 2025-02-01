@@ -115,3 +115,117 @@ Is the test_destination_index you created equal to 1?
 "Added logic to find traveler destinations and convert to internal data"
 
 """
+
+""""
+24. Now we want to create and maintain a list of attractions. Let's start by defining a list called attractions.
+
+25. Actually, we want attractions to be an empty list for every destination in destinations. You can do this with this code:
+
+attractions = [[], [], [], [], []]
+
+But there are other ways to accomplish the same thing: by looping through destinations or with a list comprehension.
+
+Define attractions to be a list of 5 (one for each test destination) empty lists using a loop or list comprehension.
+"""
+
+attractions = []
+for i in destinations:
+  attractions.append([])
+
+""""
+26. Print out your attractions. Save, and then run your code by typing python3 script.py in the terminal.
+
+Does attractions look like:
+[[], [], [], [], []]
+"""
+print(attractions) #yes
+
+""""
+27. Now let's create a function called add_attraction(). This function should take two parameters: "destination", the name of the location and "attraction", the attraction.
+
+28. First we should attempt to find the index of the destination. Use "get_destination_index()" with the passed in destination in order to retrieve the index of the destination. Save the results into "destination_index".
+
+29. This task is no longer necessary. It has been left blank so the project tasks stay aligned with the walkthrough video.
+
+Move on to task 30.
+
+30. This task is no longer necessary. It has been left blank so the project tasks stay aligned with the walkthrough video.
+
+Move on to task 31.
+
+31. If the destination does exist, then we already have a list for it in attractions. Use the destination_index to find the appropriate list in attractions and save that list to attractions_for_destination.
+"""
+
+def add_attraction(destination, attraction):
+  destination_index = get_destination_index(destination)
+  attractions_for_destinations = attractions[destination_index]
+  attractions_for_destinations.append(attraction)
+  return attractions_for_destinations
+
+""""
+32. Append the attraction passed into "add_attraction" to the list "attractions_for_destination".
+That's all we want this function to do, so we can return after adding the attraction to the list.
+
+33. Try adding the following attraction:
+"['Venice Beach', ['beach']]"
+To the “Los Angeles, USA” destination by calling "add_attraction()" with the two as arguments.
+"""
+
+add_attraction("Los Angeles, USA", ['Venice Beach', ['beach']])
+
+""""
+34. Print out "attractions". Then save and run your code with python3 script.py. Your print statement should render the following:
+
+[[], [], [['Venice Beach', ['beach']]], [], []]
+
+If it doesn't something went wrong with add_attraction().
+"""
+print(attractions) #yes
+
+""""
+35. Let's add a few more interesting places to go, paste the following code to add a few more attractions:
+
+add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
+add_attraction("Paris, France", ["Arc de Triomphe", ["historical site", "monument"]])
+add_attraction("Shanghai, China", ["Yu Garden", ["garden", "historical site"]])
+add_attraction("Shanghai, China", ["Yuz Museum", ["art", "museum"]])
+add_attraction("Shanghai, China", ["Oriental Pearl Tower", ["skyscraper", "viewing deck"]])
+add_attraction("Los Angeles, USA", ["LACMA", ["art", "museum"]])
+add_attraction("São Paulo, Brazil", ["São Paulo Zoo", ["zoo"]])
+add_attraction("São Paulo, Brazil", ["Pátio do Colégio", ["historical site"]])
+add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
+add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
+"""
+add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
+add_attraction("Paris, France", ["Arc de Triomphe", ["historical site", "monument"]])
+add_attraction("Shanghai, China", ["Yu Garden", ["garden", "historical site"]])
+add_attraction("Shanghai, China", ["Yuz Museum", ["art", "museum"]])
+add_attraction("Shanghai, China", ["Oriental Pearl Tower", ["skyscraper", "viewing deck"]])
+add_attraction("Los Angeles, USA", ["LACMA", ["art", "museum"]])
+add_attraction("São Paulo, Brazil", ["São Paulo Zoo", ["zoo"]])
+add_attraction("São Paulo, Brazil", ["Pátio do Colégio", ["historical site"]])
+add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
+add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
+
+""""
+36. Let's add this change to our git repo. First add script.py to your git index.
+
+37. Then commit the changes with the message
+"Created attractions and functionality for adding new attractions" (done in the codecademy domain, not here in my git)
+
+38. We want to be able to help our travelers find the most interesting places in a new city for them. In order to do that we need to match their interests with the possible locations in a city.
+Write a function "called find_attractions()" that takes two parameters: "destination", the name of the destination and "interests", a list of interests.
+
+39. We'll need the city's "destination_index" to look up its attractions in our attractions table.
+Create a variable called "destination_index" and save the destination's index to it using "get_destination_index()"
+
+40. Look up that destination's attractions by indexing into "attractions" with "destination_index". Save this into the variable "attractions_in_city".
+
+41. Create a new list called attractions_with_interest. Make it empty when declaring it, we'll save attractions into this list if they match one of our interests.
+
+42. Create a loop over attractions_in_city saving each item in the list into the temporary variable possible_attraction.
+"""
+def find_attractions(destination, interests):
+  destination_index = get_destination_index(destination)
+  attractions_in_city = attractions.append(destination_index)
+  attractions_with_interest = []
