@@ -224,8 +224,60 @@ Create a variable called "destination_index" and save the destination's index to
 41. Create a new list called attractions_with_interest. Make it empty when declaring it, we'll save attractions into this list if they match one of our interests.
 
 42. Create a loop over attractions_in_city saving each item in the list into the temporary variable possible_attraction.
+
+43. For each attraction, retrieve the tagged information about it. The tags are all saved in the second place (index 1) in the attraction. In the body of the for loop, save the attraction's tags into the variable attraction_tags.
+
+44. After retrieving the attraction tags, we want to see if any of the given interests are in attraction_tags. In order to do this, we're going to loop through the interests and check if any of them are in attraction_tags.
+
+Create a for loop in the body of the current for loop to loop through each interest in interests.
+
+45. For every interest in interests, check if that interest is in attraction_tags.
+
+If the interest is in the attraction_tags, append possible_attraction to attractions_with_interest.
+
+46. At the end of your function, return attractions_with_interest. Remember to unindent so you don't accidentally return before both the for loops finish running!
 """
 def find_attractions(destination, interests):
   destination_index = get_destination_index(destination)
-  attractions_in_city = attractions.append(destination_index)
+  attractions_in_city = attractions[destination_index]
   attractions_with_interest = []
+  for possible_attraction in attractions_in_city:
+    attraction_tags = possible_attraction[1]
+    for interest in interests:
+      if interest in attraction_tags:
+        attractions_with_interest = [possible_attraction[0]]
+  return attractions_with_interest
+
+""""
+47. Let's test out our function! Call find_attractions() with "Los Angeles, USA" and ['art'] as the two arguments and save the results to la_arts.
+"""
+
+la_arts = find_attractions("Los Angeles, USA",["art"])
+
+""""
+48. Print out la_arts.
+"""
+
+print(la_arts)
+
+"""
+Save, and run your code by typing python3 script.py in the terminal. It should have returned the following:
+[['LACMA', ['art', 'museum']]] 
+"""
+#YES
+""""
+49. We don't want to show the tags to our users when we recommend things to them, so let's just append the name of each attraction.
+
+In the body of find_attractions(), find where you append possible_attraction to attractions_with_interest. Change this so you only append possible_attraction[0] which will only append the name.
+
+50. Save and try rerunning your la_arts test code with python3 script.py. Printing it now should just print the following:
+['LACMA']
+"""
+#YES
+
+""""
+51. Looks like we've got an interest finder! Let's save these changes to our git repo! First let's add script.py to the git index using git add.
+
+52. Now let's commit the changes with the message "Added interest finder logic"
+"""  
+
