@@ -303,12 +303,38 @@ Start with the beginning, just "Hi " (with a space afterwards).
 Save "Hi " into a variable called interests_string.
 
 57. Update interests_string to include the name of the traveler. The traveler's name can be found at traveler[0]. “Add” this to interests_string so that it includes the name of the traveler.
+
+58. We'll want to add a little more to the interests_string before we list the interests. Add the following:
+
+This string: ", we think you'll like these places around "
+
+59. Lastly, we want to add the names of the places to go! Loop through traveler_attractions and for every attraction in the list concatenate that attraction to interests_string. You can add commas and spaces to interests_string to make it more legible as well.
+
+60. After you're finished adding all the names of the interests, return interests_string
 """  
 
 def get_attractions_for_traveler(traveler):
   traveler_destination = traveler[1]
   traveler_interests = traveler[2]
-  find_attractions(traveler_destination, traveler_interests)
-  interests_string = f"Hi {traveler[0]}, we think you'll like these places around"
-  for i in tra
+  traveler_attractions = find_attractions(traveler_destination, traveler_interests)
+  interests_string = "Hi " + traveler[0] + ", we think you'll like these places around " +traveler_destination+": "
+  for i in traveler_attractions:
+    interests_string += i
+  return interests_string
 
+""""
+61. Let's give it a test drive! Try calling get_attractions_for_traveler() with the following argument:
+
+['Dereck Smill', 'Paris, France', ['monument']]
+
+Save the results of get_attractions_for_traveler() into the variable smills_france.
+"""
+
+smills_france = get_attractions_for_traveler(['Dereck Smill', 'Paris, France', ['monument']])
+
+""""
+62. Print out smills_france. Save your work and run it by typing python3 script.py in the terminal. You should get a string that looks like the following:
+
+"Hi Dereck Smill, we think you'll like these places around Paris, France: the Arc de Triomphe"
+"""
+print(smills_france) #yes
