@@ -9,11 +9,11 @@ print(f"My name is {name}, I'm {age} yo and in a {occupation}")
 
 #one element tuple
 
-one_element_tuple = (4)
+one_element_tuple = (4)#int
 
 print(type(one_element_tuple)) #it won't print a tuple. It must have a (trailing) comma after the first element, so python can identify it as a type tuple
 
-one_element_tuple = (4,)
+one_element_tuple = (4,)#tuple
 
 print(type(one_element_tuple))
 
