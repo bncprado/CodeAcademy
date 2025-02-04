@@ -21,6 +21,23 @@ def username_generator(first_name,last_name):
     user_name = first_name+last_name
     return user_name
   
-print(username_generator("At","ira"))
+print(username_generator("Abe","Simpson"))
 
-    
+""""
+2. Great work! Now for the temporary password, they want the function to take the input user name and shift all of the letters by one to the right, so the last letter of the username ends up as the first letter and so forth. For example, if the username is AbeSimp, then the temporary password generated should be pAbeSim.
+
+Start by defining a function called password_generator that takes one parameter user_name and defines an empty string named password within the function body.
+
+3. Inside password_generator, create a for loop that iterates through the indices of user_name by going from 0 to len(user_name).
+
+The loop should create the password by shifting all the letters of user_name one to the right. To do so, add the letter at the previous index of user_name to password with each pass of the loop.
+
+After the for loop but still within the definition of password_generator, return the password.
+"""
+def password_generator(user_name):
+  password = ""
+  for i in range(user_name):
+    password = password + user_name[i]
+  return password
+
+print(password_generator("AbeSimp"))
