@@ -35,9 +35,17 @@ The loop should create the password by shifting all the letters of user_name one
 After the for loop but still within the definition of password_generator, return the password.
 """
 def password_generator(user_name):
-  password = ""
-  for i in range(user_name):
-    password = password + user_name[i]
-  return password
+  return print(user_name[-1]+user_name[:-1])
+""""
+THEIR SOLUTION:
 
-print(password_generator("AbeSimp"))
+def password_generator(user_name):
+    password = ""
+    for i in range(0, len(user_name)):
+        password += user_name[i-1]
+    return password
+
+The loop is unnecessary, and both deepseek and chatgpt confirmed my solution is way more elegant and "
+"""
+
+password_generator("BrunoPrado")
