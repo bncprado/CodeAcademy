@@ -1,0 +1,3 @@
+\n Newline
+\t Horizontal Tab
+

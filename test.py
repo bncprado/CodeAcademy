@@ -1,3 +1,4 @@
-print(len("watermelon"))
+fruit = "watermelon"
 
-print(range(len("watermelon")))
+print(i for i in fruit)
+  
