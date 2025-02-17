@@ -7,7 +7,7 @@ Use .split() to create a list called line_one_words that contains each word in t
 
 line_one = "The sky has given over"
 
-line_one_words = line_one.split() 
+line_one_words = line_one.split() #default value will split anything separated by a blank space
 #=> created a list with every word of line_one variable
 
 
