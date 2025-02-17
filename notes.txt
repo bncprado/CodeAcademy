@@ -1,0 +1,6 @@
+\n Newline
+\t Horizontal Tab
+
+"len" starts from 1
+"range" starts from 0 
+indexes start from 0 as well
