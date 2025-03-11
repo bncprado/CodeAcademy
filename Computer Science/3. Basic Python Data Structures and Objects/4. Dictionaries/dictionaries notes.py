@@ -5,7 +5,7 @@ songs = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "
 playcounts = [78, 29, 44, 21, 89, 5]
 
 plays={} #WITH FOR LOOPS, WE NEED TO CREATE AN EMPTY DICT
-for key, value in zip(songs,playcounts): #THEN DO THE BASIC LOOP
+for key, value in zip(songs,playcounts): #THEN DO THE LOOP
   plays[key]=value #AND ADD THE SONGS LIST AS THE KEY AND THE PLAYCOUNTS LIST AS THE VALUE
 
 print(plays)
