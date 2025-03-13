@@ -40,7 +40,7 @@ You should get the point value from the letter_to_points dictionary. If the lett
 """
 def score_word(word):
   point_total=0
-  for letter in word:
+  for letter in word.upper():
     if letter in letters_to_points:
       point_total+=letters_to_points[letter]
     else:
@@ -55,7 +55,7 @@ def score_word(word):
 (3 + 1 + 1 + 4 + 4 + 1 + 1) = 15
 """
 
-brownie_points = score_word("BROWNIE")
+brownie_points = score_word("brownie")
 
 print(brownie_points)#15
 
