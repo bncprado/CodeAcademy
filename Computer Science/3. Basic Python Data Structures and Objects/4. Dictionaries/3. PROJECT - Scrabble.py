@@ -118,6 +118,6 @@ def play_word(player,word):
 
 update_points_total()
 
-play_word("player1","NANANANANA")
+play_word("WDWWDWD","NANANANANA")
 
 update_points_total()
