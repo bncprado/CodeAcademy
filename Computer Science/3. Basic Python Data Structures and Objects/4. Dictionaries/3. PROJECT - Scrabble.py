@@ -86,11 +86,14 @@ Within your loop, create a variable called "player_points" and set it to 0.
 13. After the inner loop ends, set the current "player" value to be a key of "player_to_points", with a value of "player_points".
 """
 
-for player, words in player_to_words.items():
-  player_points = 0
-  for word in words:
-    player_points+=score_word(word)
-  player_to_points[player]=player_points
+def update_points_total(): 
+  for player, words in player_to_words.items():
+    player_points = 0
+    for word in words:
+      player_points+=score_word(word)
+    player_to_points[player]=player_points
+  return print(player_to_points)
+
 
 """"
 14. "player_to_points" should now contain the mapping of players to how many points they’ve scored. Print this out to see the current standings for this game!
@@ -113,4 +116,8 @@ def play_word(player,word):
   else:
     player_to_words[player]=word
 
+update_points_total()
 
+play_word("player1","NANANANANA")
+
+update_points_total()
