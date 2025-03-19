@@ -4,5 +4,5 @@
 2. Use the bad_bands_doc.write() method to add the name of a musical group you dislike to the document bad_bands.
 """
 
-with open("Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/bad_bands.txt", "w") as bad_bands_doc:
+with open("Files/bad_bands.txt", "w") as bad_bands_doc:
   bad_bands_doc.write("Simple Minds")

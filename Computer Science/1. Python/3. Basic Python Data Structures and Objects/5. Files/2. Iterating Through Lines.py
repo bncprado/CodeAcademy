@@ -6,6 +6,6 @@
 Inside the for loop print out each line of how_many_lines.txt.
 """
 
-with open("Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/how_many.lines.txt") as lines_doc:
+with open("Files/how_many.lines.txt") as lines_doc:
   for line in lines_doc.readlines():
     print(line)

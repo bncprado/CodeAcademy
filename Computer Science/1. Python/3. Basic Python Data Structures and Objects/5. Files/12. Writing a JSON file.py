@@ -15,5 +15,5 @@ data_payload = [
 
 import json
 
-with open("/Volumes/SSD 4TB EXT/Git/CodeAcademy/Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/data.json","w") as data_json:
+with open("Files/data.json","w") as data_json:
   json.dump(data_payload,data_json)

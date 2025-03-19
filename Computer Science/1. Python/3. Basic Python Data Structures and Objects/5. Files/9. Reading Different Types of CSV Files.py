@@ -9,7 +9,7 @@
 """
 
 import csv
-with open("/Volumes/SSD 4TB EXT/Git/CodeAcademy/Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/books.csv") as books_csv:
+with open("Files/books.csv") as books_csv:
   books_reader = csv.DictReader(books_csv, delimiter='@')
   isbn_list = [row["ISBN"] for row in books_reader]
   # for row in books_reader:

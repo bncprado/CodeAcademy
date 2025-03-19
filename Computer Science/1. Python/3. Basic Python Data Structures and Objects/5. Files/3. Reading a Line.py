@@ -5,7 +5,7 @@
 
 3. Print out the variable first_line.
 """
-with open("/Volumes/SSD 4TB EXT/Git/CodeAcademy/Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/just_the_first.txt") as first_line_doc:
+with open("Files/just_the_first.txt") as first_line_doc:
   first_line = first_line_doc.readline()
 
 print(first_line)

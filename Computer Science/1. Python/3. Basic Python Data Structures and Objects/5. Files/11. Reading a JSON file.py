@@ -10,7 +10,7 @@ Open the file in read-mode, without passing any additional arguments to open().
 4. Print out message['text'].
 """
 import json
-with open("/Volumes/SSD 4TB EXT/Git/CodeAcademy/Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/message.json") as message_json:
+with open("Files/message.json") as message_json:
   message = json.load(message_json)
 print(message["text"])
 

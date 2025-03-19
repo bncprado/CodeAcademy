@@ -17,7 +17,7 @@ fields = ['time', 'address', 'limit']
 
 import csv
 
-with open("/Volumes/SSD 4TB EXT/Git/CodeAcademy/Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/logger.csv","w") as logger_csv:
+with open("Files/logger.csv","w") as logger_csv:
   log_writer = csv.DictWriter(logger_csv, fieldnames=fields)
   log_writer.writeheader()
   for i in access_log:

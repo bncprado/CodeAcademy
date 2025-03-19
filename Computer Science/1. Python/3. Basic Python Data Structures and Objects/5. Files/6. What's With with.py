@@ -11,7 +11,7 @@ Remember to indent the rest of the body so that we don’t get an IndentError.
 """
 # close_this_file = open('/Volumes/SSD 4TB EXT/Git/CodeAcademy/Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/fun_file.txt')
 
-with open("/Volumes/SSD 4TB EXT/Git/CodeAcademy/Computer Science/1. Python/3. Basic Python Data Structures and Objects/5. Files/fun_file.txt") as close_this_file:
+with open("Files/fun_file.txt") as close_this_file:
   setup = close_this_file.readline()
   punchline = close_this_file.readline()
 
