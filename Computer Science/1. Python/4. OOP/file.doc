@@ -1,0 +1,16 @@
+Welcome To Object-Oriented Programming
+Let’s look ahead at this somewhat unusual section of the course.
+
+Welcome to the section of the course focused on Object-Oriented Programming. This is one of the more difficult sections of CS101, and as a result, we’ve decided to add some extra content in this module to give you lots of practice and examples.
+
+The first section of this module uses a Project-Based Learning (PBL) approach to introduce these concepts. PBL is an inquiry-based method of teaching that engages learners in authentic learning through engaging projects that push learners to ask questions.
+
+Why are we learning this? 
+Why are we learning it this way? 
+What do I, the learner, wonder about this?
+
+When used in classrooms, PBL can involve guidance and interaction with teachers as well as independent research. This can be more difficult to implement in an online, asynchronous learning environment like Codecademy, but we’re excited to explore how we can use this method to help our learners learn!
+
+After completing the PBL section of this module, we’ve included a traditional lesson and quiz covering many of the same topics introduced through PBL. We hope that this gives you the extra practice that you need to really ace Object-Oriented Programming.
+
+Finally, as of 2022, we have removed some content from this section. Previously, we had a lesson on Inheritance in this module. We ultimately decided that this content was unnecessary for CS101. If you’d like to dive even deeper into Classes and Objects after completing this module, you can check out the Object-Oriented Programming module in Intermediate Python (https://www.codecademy.com/learn/learn-intermediate-python-3).
