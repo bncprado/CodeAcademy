@@ -1,26 +1,37 @@
-# You can start with the
-# Cat class or erase this
-# and use your own!
+# LESSON 1 - # Create your class here
 class Cat:
-  def __init__(self, input_name, input_breed, input_age = 0):
+# LESSON 1 -   # Create a __init__ method
+  def __init__(self, input_name, input_age = 0, input_friendliness=True):
     self.name = input_name
-    self.breed = input_breed
     self.age = input_age
-    self.is_cuddly = True
-  
-  # Create method to change
-  # at least one attribute.
-  # Ex: def change_att(self):
+    self.isfriendly = input_friendliness
+    self.friends = []
+
+#LESSON 2
+  # Create method to change at least one attribute
   def birthday(self):
     self.age +=1
-    print(f"{self.name} is celebrating one more year. {self.name} is {self.age} years old now!")
+    print(f"Today is {self.name}'s birthday. He's {self.age} year old now. HAPPY BIRTHDAY!")
 
+#LESSON 3
+  # Create method where two pets interact.
+  # Ex: def name(self, pet):
+  def become_friends(self,other_cat):
+    if other_cat.isfriendly:
+      self.friends.append(other_cat)
+      other_cat.friends.append(self)
+      print(f"{self.name} and {other_cat.name} are now friends")
+    else:
+      print(f"{other_cat.name} don't want to befriend any other cat")
 
-# Create your new pet.
-new_cat = Cat("Leo", "Tabby", 3)
+# LESSON 1 -  # Create a new pet!
+cat_one = Cat("Doce")
 
-# Call your method on your
-# new pet here.
+# LESSON 3 - # Create another pet!
+cat_two = Cat("Azedo",1,False)
 
-new_cat.birthday()
+#LESSON 2 - # Call your method on your new pet here
+cat_one.birthday()
 
+#LESSON 3 - Call your method below
+cat_one.become_friends(cat_two)
