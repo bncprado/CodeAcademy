@@ -6,3 +6,4 @@ class Circle:
     print(f"New circle with diameter: {diameter}")
   
 teaching_table = Circle(36)
+#prints: New circle with diameter: 36

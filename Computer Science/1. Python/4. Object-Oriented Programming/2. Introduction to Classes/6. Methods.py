@@ -24,3 +24,4 @@ class Rules:
 rule1 = Rules()
 
 rule1.washing_brushes()
+#it prints: "Point bristles towards the basin while washing your brushes."
