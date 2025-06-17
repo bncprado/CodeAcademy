@@ -6,4 +6,8 @@ Create a Grade class with a class attribute .minimum_passing equal to 65.
 
 class Grade:
   minimum_passing = 65
+
+grade = Grade()
+
+print(grade.minimum_passing)
   

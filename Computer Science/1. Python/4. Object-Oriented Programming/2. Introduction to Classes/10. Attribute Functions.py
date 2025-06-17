@@ -5,4 +5,6 @@ for element in can_we_count_it:
     print(str(type(element)) + " has the count attribute!")
   else:
     print(str(type(element)) + " does not have the count attribute :(")
+
+    
     
