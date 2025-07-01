@@ -1,40 +1,112 @@
-#This is an SHOP app
-class Stock:
-  
-  products = []
+def master_user_and_password():
+  master_user_and_pass = {
+  "Username":"M",
+  "Password":"P"
+  }
 
-  def __init__(self, kind, brand, model, colour, price, qty):
-    self.kind = kind
-    self.brand = brand
-    self.model = model
-    self.colour = colour
-    self.price = price
-    self.qty = qty
+  user_name = input("Enter the master username: ").upper().strip()
 
-  def buy(self):
-    
-  
-  def sell(self):
-    pass
+  i=5
 
-  def check_stock(self):
-    pass
+  while i>0 and user_name != master_user_and_pass.get("Username"):
+    i-=1
+    if i > 1:
+      user_name = input("Try again. Please, enter the master username: ").upper().strip()
+    elif i==1:
+      user_name = input("This is your last change, program will quit if wrong username again: ").upper().strip()
+    elif i==0:
+      print("Quitting the program")
+      exit()
+
+  password = input("Now, enter the master password: ").upper().strip()
+
+  x=5
+
+  while x>0 and password != master_user_and_pass.get("Password"):
+    x-=1
+    if x > 1:
+      password = input("Try again. Please, enter the master password: ").upper().strip()
+    elif x==1:
+      password = input("This is your last change, program will quit if wrong password again: ").upper().strip()
+    elif x==0:
+      print("Quitting the program")
+      exit()
+
+# master_user_and_password()
+registered_usernames = []
 
 class User:
-  def __init__(self, name, surname, username, password):
+
+  def __init__(self, name:str, surname:str, username:str, password:int):
     self.name = name
     self.surname = surname
     self.username = username
+    while self.username in registered_usernames:
+      self.username = input(f"{self.username} already in use. Enter a different one: ")
+    registered_usernames.append(self.username)
     self.password = password
 
-  def create_account():
+  def change_username(self):
+    new_username =  input("Please, type your new username: ")
+    while new_username in registered_usernames:
+      new_username = input("Username already in use, please enter a new one: ")
+    registered_usernames.remove(self.username)
+    self.username = new_username
+    registered_usernames.append(new_username)
+
+  def change_password(self):
+    self.password = input("Please, type your new password: ")
+
+  def change_name_and_surname(self):
+    self.name = input("Please, enter your new name: ")
+    self.surname = input("Please, enter your new surname: ")
+    
+user1 = User("Bruno", "Prado", "bncprado", "Vale3")
+
+inventory = {}
+
+print(inventory)
+
+class Stock:
+  
+  def __init__(self, category, brand, model, colour, qty, price):
+    self.category = category
+    self.brand = brand
+    self.model = model
+    self.colour = colour
+    self.qty = qty
+    self.price = price
+    
+
+  def buy(self, price, qty):
+    inventory["Category"] = self.category
+    inventory["Brand"] = self.brand
+    inventory["Model"] = self.model
+    inventory["Price"] = price
+    inventory["Qty"] = qty
+
+  def sell(self, howmany):
+    inventory.update({"Qty":inventory["Qty"]-howmany})
+    
+
+  def check_stock(self):
+    # inventory["Category"] = self.category
+    # inventory["Brand"] = self.brand
+    # inventory["Model"] = self.model
+    # inventory["Colour"] = self.colour
+    # inventory["Price"] = price
+    # inventory["Qty"] = qty
     pass
 
-  def log_in():
-    pass
+iphone15 = Stock("Smartphone", "Apple", "iPhone 15", "Blue")
+print(inventory)
+iphone15.buy(799,5)
+print(inventory)
+iphone15.sell(4)
+print(inventory)
+iphone15.buy(799,5)
+print(inventory)
 
-  def change_password():
-    pass
 
 
 """
