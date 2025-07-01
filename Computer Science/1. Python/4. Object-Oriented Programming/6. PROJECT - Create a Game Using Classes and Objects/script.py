@@ -32,7 +32,6 @@ def master_user_and_password():
       print("Quitting the program")
       exit()
 
-# master_user_and_password()
 registered_usernames = []
 
 class User:
@@ -45,6 +44,9 @@ class User:
       self.username = input(f"{self.username} already in use. Enter a different one: ")
     registered_usernames.append(self.username)
     self.password = password
+
+  def __repr__(self):
+    return f"User(name='{self.name}', surname='{self.surname}', username='{self.username}, password='{self.password}')"
 
   def change_username(self):
     new_username =  input("Please, type your new username: ")
@@ -61,82 +63,48 @@ class User:
     self.name = input("Please, enter your new name: ")
     self.surname = input("Please, enter your new surname: ")
     
-user1 = User("Bruno", "Prado", "bncprado", "Vale3")
 
 inventory = {}
-
-print(inventory)
 
 class Stock:
   
   def __init__(self, category, brand, model, colour, qty, price):
-    self.category = category
-    self.brand = brand
-    self.model = model
-    self.colour = colour
-    self.qty = qty
-    self.price = price
-    
+    inventory["Category"] = self.category = category
+    inventory["Brand"] = self.brand = brand
+    inventory["Model"] = self.model = model
+    inventory["Colour"] = self.colour = colour
+    inventory["Qty"] = self.qty = qty
+    inventory["Price"] = self.price = price
 
-  def buy(self, price, qty):
-    inventory["Category"] = self.category
-    inventory["Brand"] = self.brand
-    inventory["Model"] = self.model
-    inventory["Price"] = price
-    inventory["Qty"] = qty
+  def __repr__(self):
+    return (f"Stock(category='{self.category}', brand='{self.brand}', model='{self.model}', "
+            f"colour='{self.colour}', qty={self.qty}, price={self.price})")
+  
+  def buy(self, howmany):
+    inventory.update({"Qty":inventory["Qty"] + howmany})
 
   def sell(self, howmany):
-    inventory.update({"Qty":inventory["Qty"]-howmany})
+    inventory.update({"Qty":inventory["Qty"] - howmany})
     
-
   def check_stock(self):
-    # inventory["Category"] = self.category
-    # inventory["Brand"] = self.brand
-    # inventory["Model"] = self.model
-    # inventory["Colour"] = self.colour
-    # inventory["Price"] = price
-    # inventory["Qty"] = qty
-    pass
-
-iphone15 = Stock("Smartphone", "Apple", "iPhone 15", "Blue")
+    print("You have {} {} {} in the inventory".format(inventory.get("Qty"),inventory.get("Colour"),inventory.get("Model")))
+    
 print(inventory)
-iphone15.buy(799,5)
+iphone15 = Stock("Smartphone", "Apple", "iPhone 15", "Black", 5, 799)
+print(iphone15)
+print(inventory)
+iphone15.buy(5)
 print(inventory)
 iphone15.sell(4)
 print(inventory)
-iphone15.buy(799,5)
+iphone15.check_stock()
 print(inventory)
 
-
-
-"""
-import csv
-
-# 1. Read the current data into a list
-with open("stock.csv", mode="r", newline='') as file:
-    reader = csv.reader(file)
-    rows = list(reader)
-
-rows.append(["Mobile","Apple","iPhone 15",699])
-
-with open("stock.csv", mode="w", newline='') as file:
-    writer = csv.writer(file)
-    writer.writerows(rows)
-
-
-
-# 2. Modify the data
-# Example: Add a new person
-
-
-# # Example: Remove Bob
-# rows = [row for row in rows if row["name"] != "Bob"]
-
-# # 3. Write it back (overwrite file)
-# with open("people.csv", mode="w", newline='') as file:
-#     fieldnames = ["name", "age"]
-#     writer = csv.DictWriter(file, fieldnames=fieldnames)
-    
-#     writer.writeheader()
-#     writer.writerows(rows)
-"""
+user1 = User("Bruno", "Prado", "bncprado", "Vale3")
+print(user1)
+user1.change_username()
+print(user1)
+user1.change_password()
+print(user1)
+user1.change_name_and_surname()
+print(user1)
