@@ -5,10 +5,11 @@ class Item:
       "qty" : qty
     }
     instance.not_defined_attribute = "This wasn't passed into the parameters, but it's part of the class"
+    variable_inside_a_class = "this is a variable inside a class"
 
 item1 = Item("iPhone",8)
 
-item1.not_defined_attribute
+
 # stock = {
 #       "brand" : "Apple",
 #       "product" : "iPhone",
