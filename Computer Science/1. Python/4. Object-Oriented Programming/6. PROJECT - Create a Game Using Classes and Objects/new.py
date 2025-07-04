@@ -1,9 +1,12 @@
 class Stock:
   def __init__(self, brand, product, qty):
+    # self.brand = brand
+    # self.product = product
+    # self.qty = qty
     self.stock = {
       "brand" : brand,
       "product" : product,
-      "year" : qty
+      "qty" : qty
     }
 
   def check_username(self,user):
@@ -16,7 +19,7 @@ class Stock:
     if isinstance(user,Username):
       self.stock["brand"] = brand
       self.stock["product"] = product
-      self.stock["qty"] = self.qty+qty
+      self.stock["qty"] +=qty
     else:
       print("User not registered. Program will quit")
       exit()
@@ -25,7 +28,7 @@ class Stock:
     if isinstance(user,Username):
       self.stock["brand"] = brand
       self.stock["product"] = product
-      self.stock["qty"] = self.qty-qty
+      self.stock["qty"] -=qty
     else:
       print("User not registered. Program will quit")
       exit()
@@ -42,7 +45,7 @@ class Username:
 
   def buy_stock(self):
     pass
-  
+
   def sell_stock(self):
     pass
 
@@ -55,8 +58,16 @@ class Username:
 user1 = Username("Bruno", "Prado", "bncprado", "123321")
 
 stock1 = Stock("Apple", "iPhone", 2)
+
+
+stock1.log_purchase(user1,"Apple","iPhone",7)
 print(stock1.stock)
-stock1.log_purchase(user1,"Apple","iPhone",5)
+stock1.log_purchase(user1,"Apple","iPhone",1)
 print(stock1.stock)
-stock1.log_sell(user1,"Apple","iPhone",3)
+stock1.log_sell(user1,"Apple","iPhone",2)
 print(stock1.stock)
+
+
+
+# stock1.log_sell("user1","Apple","iPhone",3)
+# print(stock1.stock)
