@@ -4,10 +4,19 @@ class Item:
       "product" : product,
       "qty" : qty
     }
-    instance.not_defined_attribute = "This wasn't passed into the parameters, but it's part of the class"
-    variable_inside_a_class = "this is a variable inside a class"
+    
+    
 
+  def return_stock(self):
+    pass
+  
 item1 = Item("iPhone",8)
+
+item1.return_stock()
+
+def teste(self):
+  return self
+  
 
 
 # stock = {

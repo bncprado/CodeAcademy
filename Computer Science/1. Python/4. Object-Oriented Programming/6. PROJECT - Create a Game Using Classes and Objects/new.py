@@ -1,73 +1,43 @@
-class Stock:
+class Shop:
+  
   def __init__(self, brand, product, qty):
-    # self.brand = brand
-    # self.product = product
-    # self.qty = qty
-    self.stock = {
-      "brand" : brand,
-      "product" : product,
-      "qty" : qty
-    }
+    self.brand = brand
+    self.product = product
+    self.qty = qty
+    
+  def add_stock(self, qty=int):
+    self.qty += qty
+    print(f"You've added {qty} pieces of {self.brand}'s {self.product} to your stock")
 
-  def check_username(self,user):
-    if not isinstance(user, Username):
-      print(f"{user} not existent")
-    else:
-      print(f"{user.username} is a registered employee")
+  def remove_stock(self, qty=int):
+    self.qty -= qty
+    print(f"You've removed {qty} pieces of {self.brand}'s {self.product} to your stock")
 
-  def log_purchase(self,user,brand,product,qty):
-    if isinstance(user,Username):
-      self.stock["brand"] = brand
-      self.stock["product"] = product
-      self.stock["qty"] +=qty
-    else:
-      print("User not registered. Program will quit")
-      exit()
+  def check_stock(self):
+    print (f"You have {self.qty} pieces of {self.brand}'s {self.product} in your stock")
 
-  def log_sell(self,user,brand,product,qty):
-    if isinstance(user,Username):
-      self.stock["brand"] = brand
-      self.stock["product"] = product
-      self.stock["qty"] -=qty
-    else:
-      print("User not registered. Program will quit")
-      exit()
+item1 = Shop("Apple", "iPhone", 2)
+item1.check_stock()
+item1.add_stock(3)
+item1.check_stock()
+item1.remove_stock(2)
 
-  def __repr__(self):
-    pass
+class Shopper:
 
-class Username:
-  def __init__(self, first_name, last_name, username, password, ):
+  basket = {}
+  def __init__(self, first_name, last_name, username):
     self.first_name = first_name
     self.last_name = last_name
     self.username = username
-    self.password = password
 
-  def buy_stock(self):
+  def add_to_basket(self):
     pass
 
-  def sell_stock(self):
+  def remove_from_basket(self):
     pass
 
-  def check_stock(self):
+  def check_out(self):
     pass
 
-  def __repr__(self):
-    pass
-
-user1 = Username("Bruno", "Prado", "bncprado", "123321")
-
-stock1 = Stock("Apple", "iPhone", 2)
 
 
-stock1.log_purchase(user1,"Apple","iPhone",7)
-print(stock1.stock)
-stock1.log_purchase(user1,"Apple","iPhone",1)
-print(stock1.stock)
-stock1.log_sell(user1,"Apple","iPhone",2)
-print(stock1.stock)
-
-
-
-# stock1.log_sell("user1","Apple","iPhone",3)
-# print(stock1.stock)
