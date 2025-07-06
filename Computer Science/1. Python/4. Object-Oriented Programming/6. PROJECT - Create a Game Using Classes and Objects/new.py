@@ -26,17 +26,7 @@ class Shopper:
     self.username = username
 
   def add_to_basket(self,item, qty):
-    if isinstance(item, Shop):
-      if qty > item.qty:
-        print(f"We only have {item.qty} pieces. Please adjust to match stock")
-        exit()
-        if item.brand
-        self.basket = {"Brand":item.brand,
-                      "Product":item.product,
-                      "Qty":qty}
-        item.qty -= qty
-    else:
-      print(f"{item} not existent")
+    
 
   def remove_from_basket(self):
     pass
