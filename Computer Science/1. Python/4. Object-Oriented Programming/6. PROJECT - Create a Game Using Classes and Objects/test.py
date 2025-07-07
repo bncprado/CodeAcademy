@@ -1,9 +1,16 @@
-basket = [["Brand","Model","Qty"],["Apple","iPhone",4],["Apple","iPhone13",4]]
+basket = ["Apple", "iPhone", 5]
 
-for x in basket[:-1]:
-  if "Apple" in x and "iPhone13" in x:
-    basket.append(["Apple","iPhone13",4])
-    break
-  else:
-    print(x)
+basket[2] += 4
 
+print(basket)
+
+# brand = "Apple"
+# model = "iPhone13"
+# qty = 6
+
+# for x in range(len(basket[1:])):
+#   if brand in basket[x]:
+#     print(basket[x][1])
+#     break
+#   else:
+#     print(basket)
