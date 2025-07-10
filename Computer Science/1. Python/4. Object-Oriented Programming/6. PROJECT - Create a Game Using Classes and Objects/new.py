@@ -24,6 +24,9 @@ class Shop:
       print(f"{shopper} is not registered")
       exit()
 
+  def list_inventory(self):
+    print(f"{self.brand} {self.model}: {self.qty} in stock")
+
 class Shopper:
   
   def __init__(self, first_name, last_name, username):
@@ -108,3 +111,4 @@ print(shopper1.username)
 
 shopper2.change_username("zequinha")
 print(shopper2.username)
+
